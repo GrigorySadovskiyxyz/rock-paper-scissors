@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../freeCodeCamp-SurveyForm"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Odin-Rock-Paper-Scissors"
+	}
+}

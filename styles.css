@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+/* Unused hex color #44b7e8; */
+
+.container {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  flex-wrap: wrap;
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #dfdccd;
+  color: #606060;
+}
+
+header {
+  text-align: center;
+}
+
+/* .item {
+  background-color: white;
+} */
+
+.emoji {
+  padding: 3rem;
+  margin-top: 250px;
+  font-size: 10rem;
+  transform: scale(0.8);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: text-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+  border: 1mm solid black
+}
+
+.emoji:hover {
+    cursor: pointer;
+    transform: scale(1) translatey(-13px);
+    text-shadow: 0 20px 20px rgba(0, 0, 0, 0.3);
+  }
+
+.emoji--rock::before {
+    content: '\1F5FF';
+  }
+  
+  .emoji--paper::before {
+    content: '\1F9FB';
+  }
+  
+  .emoji--scissors::before {
+    content: '\2694';
+  }
+  
