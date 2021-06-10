@@ -1,42 +1,70 @@
 
 let playerScore = 0;
 let computerScore = 0;
+let gameResult = document.getElementById("description");
 
-const emojiButtons = document.querySelectorAll('.emoji');
-// emojiButtons.forEach((button) => button.addEventListener('click', func));
+const computerPlay = () => {
+    let options = ["Rock', 'Paper', 'Scissors"];
+    return options[Math.floor(Math.random() * options.length)];
+}
 
-console.log(emojiButtons[0].value)
+function playerSelection(clicked_id) {
+   return playRound(clicked_id, computerPlay()), updateScore(), isGameOver();
+}
 
-// gameChoices.addEventListener('click', event => {button. = `Click count: ${event.detail}`;
-// });
+function addRow(playerSelection, computerSelection) {
+    let tableRef = document.getElementById("table");
+    let newRow = tableRef.insertRow(-1);
+  
+    let newPlayerCell = newRow.insertCell(0);
+    let newComputerCell = newRow.insertCell(1);
+  
+    newPlayerCell.innerHTML = `${playerSelection}`;
+    newComputerCell.innerHTML = `${computerSelection}`;
+    }
 
-// rockChoice.addEventListener("click", function() {
-//     let increment = document.getElementById("#count");
-//     increment.value = count;
-//     count++;
-//   });
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+        gameResult.innerHTML = "It's a tie!"
+    } else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
+        gameResult.innerHTML = `Loser! ${computerSelection} beats ${playerSelection}.`
+        computerScore++
+    } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
+        gameResult.innerHTML = `Winner! ${playerSelection} beats ${computerSelection}.`
+        playerScore++
+    } else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
+        gameResult.innerHTML = `Winner! ${playerSelection} beats ${computerSelection}.`
+        playerScore++
+    } else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
+        gameResult.innerHTML = `Loser! ${computerSelection} beats ${playerSelection}.`
+        computerScore++
+    } else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
+        gameResult.innerHTML = `Winner! ${playerSelection} beats ${computerSelection}.`
+        playerScore++
+    }  else if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
+        gameResult.innerHTML = `Loser! ${computerSelection} beats ${playerSelection}.`
+        computerScore++
+    }
+    return addRow(playerSelection, computerSelection);
+  }
 
+function updateScore() {
+    document.getElementById("score").innerHTML = `${playerScore} - ${computerScore}`;
+}
 
-// function randomComputer(){
-//   let options = ['Rock', 'Paper', 'Scissors']
-//   return (options[Math.floor(Math.random() * options.length)])
-// }
-
-
-// function playRound(playerSelection, computerSelection) {
-//     if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
-//         console.log(`Player has ${playerSelection.toLowerCase()} and Computer has ${computerSelection.toLowerCase()}. It's a tie!`)
-//     } else if (computerSelection.toLowerCase() === )
-//   }
-
-// const playerSelection = "rock";
-// const computerSelection = computerPlay();
-// console.log(playRound(playerSelection, computerSelection));
-
-
-// function game() {
-//     for (let counter = 0; counter < 5; counter++) {
-
-//     }
-
-// }
+function isGameOver() {
+    let buttons = document.getElementsByClassName("emoji");
+    if (playerScore === 5) {
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = true;
+            buttons[i].style.pointerEvents = "none";
+        }
+        gameResult.innerHTML = 'Game over! You win! Reload the page to play again.'
+    } else if (computerScore === 5) {
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = true;
+            buttons[i].style.pointerEvents = "none";
+        }
+        gameResult.innerHTML = 'Game over! You lose! Reload the page to play again.'
+    }
+}

@@ -2,7 +2,7 @@
 
 /* Unused hex color #44b7e8; */
 
-.container {
+.container-choices{
   display: flex;
   justify-content: center;
   justify-items: center;
@@ -11,21 +11,36 @@
 
 body {
   font-family: 'Noto Sans', sans-serif;
-  background-color: #dfdccd;
-  color: #606060;
+  background-color: white;
+  color: #000000;
+}
+
+h1 {
+  font-size: 40pt; 
+}
+
+h2 {
+  font-size: 25pt; 
 }
 
 header {
   text-align: center;
 }
 
-/* .item {
-  background-color: white;
-} */
+.table-emoji {
+  font-size: 40pt; 
+}
+
+table.center {
+    table-layout: auto;
+    width: 25%; 
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 .emoji {
   padding: 3rem;
-  margin-top: 250px;
   font-size: 10rem;
   transform: scale(0.8);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -40,14 +55,13 @@ header {
   }
 
 .emoji--rock::before {
-    content: '\1F5FF';
+    content: '\270A';
   }
   
   .emoji--paper::before {
-    content: '\1F9FB';
+    content: '\270B';
   }
   
   .emoji--scissors::before {
-    content: '\2694';
+    content: '\270C';
   }
-  

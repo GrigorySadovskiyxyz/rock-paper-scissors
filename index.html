@@ -11,16 +11,21 @@
     <main id="main">
         <header>
             <h1>Rock Paper Scissors</h1>
-            <h2>First to score in 5 rounds wins!</h2>
-            <h2 id="player">Player Score: 0</h2>
-            <h2 id="computer">Computer Score: 0</h2>
+            <h3>The winner is first to score 5 points.</h3>
+            <h2 id="score">0 - 0</h2>
+            <h2 id="description">Start the game!</h2>
         </header>
-        <div class="round-emoji" id="round-emoji"></div>
-        <div class="container">
-                <button class="emoji emoji--rock" value="Rock"></button>
-                <button class="emoji emoji--paper" value="Paper"></button>
-                <button class="emoji emoji--scissors" value="Scissors"></button>
+        <div class="container-choices">
+                <button class="emoji emoji--rock" id="Rock" onClick="playerSelection(this.id)"></button>
+                <button class="emoji emoji--paper" id="Paper" onClick="playerSelection(this.id)"></button>
+                <button class="emoji emoji--scissors" id="Scissors" onClick="playerSelection(this.id)"></button>
         </div>
+            <table class="center" id="table">
+                <tr>
+                <th class="table-emoji">👨</th>
+                <th class="table-emoji">🤖</th>
+                </tr>
+            </table>
     </main>
     <script src="script.js"></script>
 </body>
