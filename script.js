@@ -3,9 +3,9 @@ let playerScore = 0;
 let computerScore = 0;
 let gameResult = document.getElementById("description");
 
-const computerPlay = () => {
-    let options = ["Rock', 'Paper', 'Scissors"];
-    return options[Math.floor(Math.random() * options.length)];
+function computerPlay() {
+    let items = ["Rock", "Paper", "Scissors"];
+    return items[Math.floor(Math.random() * items.length)]
 }
 
 function playerSelection(clicked_id) {
